@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg'
 import { toggleCartHidden } from '../../redux/cart/cart.actions'
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors'
 import './cart-icon.styles.scss'
 
 
@@ -12,8 +13,8 @@ const CartIcon = ({toggleCartHidden, itemCount}) => (
     </div>
 )
 
-const mapStateToProps = ({cart: {cartItems}}) => ({
-    itemCount: cartItems.reduce((accumulatedQuantity, item) => accumulatedQuantity + item.quantity, 0)
+const mapStateToProps = state => ({
+    itemCount: selectCartItemsCount(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
