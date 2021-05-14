@@ -1,5 +1,11 @@
 import React, {Component} from 'react'
 import MenuItem from '../menu-item/menu-item.component'
+import hats from '../../assets/images/hats.jpg'
+import jackets from '../../assets/images/jackets.jpg'
+import womens from '../../assets/images/womens.jpg'
+import sneakers from '../../assets/images/sneakers.jpg'
+import mens from '../../assets/images/mens.png'
+
 import "./directory.styles.scss"
 
 
@@ -11,32 +17,32 @@ class Directory extends Component {
             sections: [
                 {
                     title: "hats",
-                    imageUrl: "hats.jpg",
+                    imageUrl: hats,
                     id: 1,
                     linkUrl: "hats"
                 },
                 {
                     title: "jackets",
-                    imageUrl: "jackets.jpg",
+                    imageUrl: jackets,
                     id: 2,
                     linkUrl: ""
                 },
                 {
                     title: "sneakers",
-                    imageUrl: "sneakers.jpg",                    
+                    imageUrl: sneakers,                    
                     id: 3,
                     linkUrl: ""
                 },
                 {
                     title: "womens",
-                    imageUrl: "womens.jpg",
+                    imageUrl: womens,
                     size: "large",
                     id: 4,
                     linkUrl: ""
                 },
                 {
                     title: "mens",
-                    imageUrl: "mens.png",
+                    imageUrl: mens,
                     size: "large",
                     id: 5,
                     linkUrl: ""
