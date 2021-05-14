@@ -4,17 +4,15 @@ import './collection-preview.styles.scss'
 
 const CollectionPreview = (props) => {
     const { title, items } = props
-    console.log(items)
     return (
         <div className="collection-preview">
             <h1 className="title">{title}</h1>
             <div className="preview">
                 {
                     items.filter((i, index) => index < 4).map(
-                        ({id, ...otherProps}) => (
+                        (item) => (
                         <CollectionItem 
-                            key={id}
-                            {...otherProps}
+                            key={item.id} item={item}
                         />)
                     )
                 }

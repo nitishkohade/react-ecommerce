@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CollectionPreview from "../../components/collection-preview/collection-preview.component";
-import { ShopData } from "./shop.data";
+import SHOP_DATA from "./shop.data";
 
 
 class ShopPage extends Component {
@@ -9,7 +9,7 @@ class ShopPage extends Component {
         super(props)
 
         this.state = {
-            collections: ShopData
+            collections: SHOP_DATA
         }
     }
 
