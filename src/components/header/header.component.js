@@ -9,48 +9,53 @@ import Cart from '../cart-dropdown/cart-dropdown.component'
 import { createStructuredSelector } from 'reselect'
 import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
+import { HeaderContainer, LogoContainer, LogoDiv, OptionDiv, OptionLink, OptionsContainer, LogoText } from './header.styles'
 
 const Header = ({ currentUser, hidden }) => {
     return (
-        <div className="header">
-            <Link to="/" className="logo-container">
-                <div className="logo-div">
-                    <span className="logo-text">ModernCart</span>
+        <HeaderContainer>
+            <LogoContainer to="/">
+                <LogoDiv >
+                    <LogoText >ModernCart</LogoText>
                     <Logo 
                         height="43px"
                         width="90px"
-                        style={{"margin-top":"10px"}}
+                        style={{"marginTop":"10px"}}
                         className="logo">
                     </Logo>
-                </div>
-            </Link>
-            <div className="options">
-                <Link to="/shop" className="option">
+                </LogoDiv>
+            </LogoContainer>
+            <OptionsContainer >
+                <OptionLink to="/shop" >
                     SHOP
-                </Link>
-                <Link to="/contact" className="option">
+                </OptionLink>
+                <OptionLink to="/contact" >
                     CONTACT
-                </Link>
+                </OptionLink>
                 {
                     currentUser
                         ?
                         (
-                            <div className="option"
+                            // <OptionDiv 
+                            //     onClick={() => auth.signOut()}>
+                            //     SIGN OUT
+                            // </OptionDiv>
+                            <OptionLink as='div'
                                 onClick={() => auth.signOut()}>
                                 SIGN OUT
-                            </div>
+                            </OptionLink>
                         )
                         :
                         (
-                            <Link to="/signin" className="option">
+                            <OptionLink to="/signin" >
                                 SIGN IN
-                            </Link>
+                            </OptionLink>
                         )
                 }
                 <CartIcon />
-            </div>
+            </OptionsContainer>
             { hidden ? (<></>) : (<Cart />) }
-        </div>
+        </HeaderContainer>
     )
 }
 

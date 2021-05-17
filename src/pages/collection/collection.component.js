@@ -19,7 +19,7 @@ const CollectionPage = ({match: {params}, collection}) => {
 
 
 const mapStateToProps = ({shop: {collections}}, ownProps) => ({
- collection: collections[ownProps.match.params.collectionId]
+ collection: collections ? collections[ownProps.match.params.collectionId] : null
  
 })
 
