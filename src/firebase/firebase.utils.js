@@ -33,7 +33,7 @@ const config = {
           ...additionalData
         })
       } catch(error) {
-        console.log('error creating user', error.message)
+        // console.log('error creating user', error.message)
       }
     }
 
@@ -47,7 +47,6 @@ const config = {
     objectsToAdd.forEach(
       obj => {
         const newDocRef = collectionRef.doc(obj.title)
-        console.log(newDocRef)
         batch.set(newDocRef, obj)
       }
     )
